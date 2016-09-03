@@ -1,7 +1,7 @@
 
 ob_start();
-define('API_KEY','token');
-$admin = "159887854";
+define('API_KEY','236936863:AAEY_4MkGDyyWZ6ZpKTk57jwNxoWURfyziI');
+$admin = "236486339";
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -30,7 +30,7 @@ if (isset($update->edited_message)){
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\nمن دیدم که چی گفتی بازم ادیت کنی میفهمم
+  $text = "<b>".$edname."</b>\nمن دیدم که چی گفتی كوني بازم ادیت کنی میفهمم
   گفتی:
 ".$jsu;
   $id = $update->edited_message->chat->id;
@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "سلام\nبه ربات اديت نكن خوش امديد\nبا يوزرنيم @Dont_Edit_BOT\n<b>اين ربات توسط </b>@L_u_a<b>ساخته شده</b>\nhttps://telegram.me/Dont_Edit_BOT?startgroup=new";
+  $text = "سلام\nبه ربات اديت نكن خوش امديد\nبا يوزرنيم @Dont_Edit_BOT\n<b>اين ربات توسط </b>@L_u_a<b>ساخته شده</b>\nبراي ادد كردن ربات در گروه كليك كنيد\nhttps://telegram.me/Dont_Edit_BOT?startgroup=new";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
