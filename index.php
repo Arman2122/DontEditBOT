@@ -1,7 +1,7 @@
 <?php
 ob_start();
 define('API_KEY','token');
-$admin = "159887854";
+$admin = "236486339";
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -30,7 +30,7 @@ if (isset($update->edited_message)){
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\nمن دیدم که چی گفتی بازم ادیت کنی میفهمم
+  $text = "<b>".$edname."</b>\nمن دیدم که چی گفتی  😐😂بازم ادیت کنی میفهمم
   گفتی:
 ".$jsu;
   $id = $update->edited_message->chat->id;
@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "به ربات ادیت نکن\nخوش آمدید\nبرای اد کردن من به گروه بر روی لینک زیر بزنید\nhttps://telegram.me/DontEdit_BOT?startgroup=new";
+  $text = "به ربات ادیت نکن\nخوش آمدید\nبرای اد کردن من به گروه بر روی لینک زیر بزنید\nhttps://telegram.me/Dont_Edit_BOT?startgroup=new";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
@@ -53,10 +53,10 @@ if (isset($update->edited_message)){
     'reply_markup'=>json_encode([
       'inline_keyboard'=>[
         [
-          ['text'=>'alireza_PT','url'=>'https://telegram.me/alireza_PT']
+          ['text'=>'Arman','url'=>'https://telegram.me/L_u_a']
         ],
         [
-          ['text'=>'CreateBOT','url'=>'https://telegram.me/create_antispam_bot']
+          ['text'=>':)','url'=>'https://telegram.org']
         ]
       ]
     ])
@@ -74,8 +74,7 @@ if (isset($update->edited_message)){
 bot('sendMessage',[
       'chat_id'=>$chat_id,
       'text'=>"به گروه خوش آمدید "
-    ]);
-}
+   }
   
   
   
@@ -88,5 +87,4 @@ $txxt = file_get_contents('member.txt');
     if (!in_array($chat_id,$pmembersid)){
       $aaddd = file_get_contents('member.txt');
       $aaddd .= $chat_id."\n";
-      file_put_contents('member.txt',$aaddd);
-    }
+      file_put_contents('member.txt',$
